@@ -1,4 +1,4 @@
-package ctci.chapter08;
+package ctci.chapter08.4thedition;
 
 /**
 * Write a method to generate the nth Fibonacci number

@@ -1,4 +1,4 @@
-package ctci.chapter08;
+package ctci.chapter08.4thedition;
 
 /**
 * Imagine a robot sitting on the upper left hand corner of an NxN grid
