@@ -13,7 +13,7 @@ public class Robot{
 
   public int easyPathCounter(int row, int col){
     int count = 0;
-    if(row >= n - 1 && col >= n - 1){
+    if((row >= n - 1 && col >= n - 1)||!canStep(row, col)){
       count = 0;
     }else if(row >= n - 1 || col >= n -1){
       count = 1;
@@ -21,6 +21,11 @@ public class Robot{
       count = easyPathCounter(row, col + 1) + easyPathCounter(row + 1, col);
     }
     return count;
+  }
+
+  public boolean canStep(int x, int y){
+    // default
+    return true;
   }
 
   public static void main(String[] args){
