@@ -7,28 +7,34 @@ import java.util.ArrayList;
 * Write a method to compute all permutations of a string
 */
 public class Permutations{
+
+  // Own solution
   public static List<String> getAllPermutations(String str){
+    if(str == null){
+      return null;
+    }
     return getAllPermutations(str, 0);
   }
 
   public static List<String> getAllPermutations(String str, int index){
     int len = str.length();
-    if(index >= len || index < 0){
+    if(index > len || index < 0){
       return null;
     }
 
-    char[] array = str.toCharArray();
     List<String> result = new ArrayList<String>();
-    if(index == len - 1){
-      result.add(String.valueOf((array[len - 1])));
+    if(index == len){
+      result.add("");
     }else{
       List<String> cache = getAllPermutations(str, index + 1);
       for(String single:cache){
-        result.addAll(getPermutationsWithChar(single, array[index]));
+        result.addAll(getPermutationsWithChar(single, str.charAt(index)));
       }
     }
     return result;
   }
+
+  //
 
   public static List<String> getPermutationsWithChar(String str, char c){
     
