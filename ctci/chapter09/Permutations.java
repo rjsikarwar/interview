@@ -34,8 +34,6 @@ public class Permutations{
     return result;
   }
 
-  //
-
   public static List<String> getPermutationsWithChar(String str, char c){
     
     List<String> result = new ArrayList<String>();
@@ -52,11 +50,48 @@ public class Permutations{
     return result;
   }
 
+  // Solutions from the book
+  public static ArrayList<String> getPerms(String str){
+    if(str == null){
+      return null;
+    }
+    ArrayList<String> results = new ArrayList<String>();
+    if(str.length() == 0){
+      results.add("");
+      return results;
+    }
+
+    char first = str.charAt(0);
+    ArrayList<String> remain = getPerms(str.substring(1));
+
+    for(String word:remain){
+      for(int j = 0; j <= word.length(); j++){
+        results.add(insertCharAt(word, first, j));
+      }
+    }
+    return results;
+  }
+
+  public static String insertCharAt(String word, char c, int index){
+    String start = word.substring(0, index);
+    String end = word.substring(index);
+    return start + c + end;
+  }
+  
+
   public static void main(String[] args){
-    String str = "abc";
+    String str = "ab";
+    System.out.println("TEST Substring: " + str.substring(0));
     List<String> results = getAllPermutations(str);
     for(String result:results){
       System.out.println(result);
     }
+    System.out.println("another method:");
+
+    results = getPerms(str);
+    for(String result:results){
+      System.out.println(result);
+    }
+
   }
 }
