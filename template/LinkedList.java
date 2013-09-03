@@ -37,6 +37,10 @@ public class LinkedList<T>{
     return this.head;
   }
 
+  public void setHead(ListNode<T> node){
+    this.head = node;
+  }
+
   public Iterator<T> iterator(){
     return new LinkedListIterator<T>(this);
   }
