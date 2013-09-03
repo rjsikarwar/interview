@@ -36,7 +36,32 @@ public class PartLinkedList{
 
   // implementation of the ctci book, using two list to represent the smaller and larger value
   // and then merge them together
-  
+  public static ListNode<Integer> part(ListNode<Integer> node, int value){
+    ListNode<Integer> before = null;
+    ListNode<Integer> after = null;
+    while(node != null){
+      ListNode<Integer> next = node.getNext();
+      if(node.getValue() < value){
+        node.setNext(before);
+        before = node;
+      }else{
+        node.setNext(after);
+        after = node;
+      }
+      node = next;
+    }
+
+    if(before == null){
+      return after;
+    }else{
+      ListNode<Integer> head = before;
+      while(before.getNext() != null){
+        before = before.getNext();
+      }
+      before.setNext(after);
+      return head;
+    }
+  }
 
   public static void main(String[] args){
     LinkedList<Integer> list = new LinkedList<Integer>();
@@ -55,10 +80,18 @@ public class PartLinkedList{
       System.out.println(it.next());
     }
 
-    LinkedList<Integer> newList = partLinkedList(list, 3);
+    System.out.println("Own Implementation:");
+    LinkedList<Integer> newList = partLinkedList(list, 5);
     it = newList.iterator();
     while(it.hasNext()){
       System.out.println(it.next());
+    }
+
+    System.out.println("Another Implementation:");
+    ListNode<Integer> head = part(list.getHead(), 5);
+    while(head != null){
+      System.out.println(head.getValue());
+      head = head.getNext();
     }
 
   }
