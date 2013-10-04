@@ -6,6 +6,30 @@ import java.util.List;
 import java.util.Collections;
 import java.io.BufferedReader;
 
+/**
+* Every day, Square merchants customize and use items to run their business. Items are anything a business sells:
+* from haircuts to a cup of coffee. Using aggregated data, mechants can ask quesitons like 
+* "what are my most popular items?"
+* 
+* The input is from STDIN and output to STDOUT. The first line of input is the number of total items purchased
+* (required if you're writing in C or the like). Each line after that has the name of the item purchased
+*
+* For example, receiving
+* 6
+* coffee
+* coffee
+* coffee
+* muffin
+* muffin
+* banana
+* Your output should be:
+* coffee
+* muffin
+* banana
+*
+* Return the top 3 items purchased. If there are ties, sort alphabeticallya and only return 3
+*/
+
 public class SquareTopItems {
     public static void main(String args[] ) throws Exception {
         /* Enter your code here. Read input from STDIN. Print output to STDOUT */
