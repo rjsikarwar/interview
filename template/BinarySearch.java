@@ -24,7 +24,7 @@ public class BinarySearch{
     int min = 0;
     int max = array.length - 1;
     int middle = 0;
-    while(min < max){
+    while(min <= max){
       middle = (min + max) >>> 1;
       if(array[middle] == target){
         return true;
@@ -45,4 +45,5 @@ public class BinarySearch{
     System.out.println(binarySearchIteration(array, 9));
 
   }
+
 }
