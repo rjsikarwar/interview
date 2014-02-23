@@ -1,3 +1,17 @@
+/**
+ * Triangle
+ * By starting at the top of the triangle and moving to adjacent numbers on the row below,
+ * the maximum total from top to bottom is 27
+ *       5
+ *     9  6
+ *   4   6  8
+ * 0   7  1   5                     
+ * resutl 5 + 9 + 6 + 7 = 27
+ * Write a program in a language of your choice to find the maximum total from top to bottom
+ *
+ */
+
+
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
@@ -53,7 +67,7 @@ public class Triangle{
 
   public static void main(String[] args){
     readFile();
-    System.out.println(Arrays.deepToString(triangle));
+    //System.out.println(Arrays.deepToString(triangle));
     System.out.println("___________________");
     int max = maxSum();
     System.out.println(max);
