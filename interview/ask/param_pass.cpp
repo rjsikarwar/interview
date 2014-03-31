@@ -12,7 +12,7 @@ class Wrapper{
     int dig;
 };
 
-void mul( int a ){
+void mul(int & a ){
   a = 2 * a;
 }
 
